@@ -24,6 +24,8 @@
 - 已初始化本機 Git 儲存庫並建立 `main`，遠端設為私人儲存庫 `https://github.com/jesuswaytaipeisrv/yeh`；首個 commit 為 `57b8f5772ef728195965caad2af0131c99196c88`（`建立葉如凡靜態網站`），已成功推送。
 - GitHub Actions `Deploy GitHub Pages #1`（run `30011028291`）已自動觸發但失敗；確認原因是儲存庫尚未啟用 Pages，而目前帳號方案的設定頁僅提供「升級方案或將儲存庫改為公開」兩種啟用方式。
 - 目前儲存庫維持 private，未擅自改為 public、未開始付費升級，也尚未產生 GitHub Pages 正式網址；等待使用者決定升級 GitHub Pro 或改為公開儲存庫後再繼續部署。
+- 使用者後續明確確認此儲存庫用於葉如凡網站，並完成 GitHub sudo mode 身分驗證；`jesuswaytaipeisrv/yeh` 已由 private 改為 public。
+- GitHub Pages 已啟用，Build and deployment source 設為 GitHub Actions；依使用者要求先停在此階段，尚未重新執行失敗的 workflow 或驗證正式網址。
 
 ### 已知相依項目
 
