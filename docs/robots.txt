@@ -1,28 +1,4 @@
-Sitemap: https://www.fanfanyeh.net/sitemap.xml
-
-User-agent: NerdyBot
-Disallow: /
-
-User-agent: dotbot
-Crawl-delay: 10
-
 User-agent: *
-Disallow: /ajax/
-Disallow: /apps/
-Disallow: /elthacv_publicrelations.html
-Disallow: /elthacv_employeecommunications.html
-Disallow: /couragecolumn.html
-Disallow: /9/
-Disallow: /couragecolumn/
-Disallow: /couragecolumn
-Disallow: /elthacv_corporate-sustainability.html
-Disallow: /faq.html
-Disallow: /emailme.html
-Disallow: /elthacv.html
-Disallow: /90dayreadingprogram.html
-Disallow: /photography.html
-Disallow: /2025newtest-757301.html
-Disallow: /2025newtest.html
-Disallow: /20243550631243240372031622346.html
-Disallow: /aboutme2024.html
-Disallow: /mcportfolio.html
+Allow: /
+
+Sitemap: https://jesuswaytaipeisrv.github.io/yeh/sitemap.xml

@@ -34,3 +34,11 @@ find docs -name '*.html' -type f -print0 | while IFS= read -r -d '' page; do
 done
 
 touch docs/.nojekyll
+
+# Make the archive independent from Weebly slideshow/comment endpoints, repair
+# metadata and legacy URLs, and download slideshow images while the source site
+# is still available.
+python3 work/repair_static_site.py \
+  --docs "$target_dir" \
+  --base-url "https://jesuswaytaipeisrv.github.io/yeh/" \
+  --download-images

@@ -2,6 +2,26 @@
 
 ## 2026-07-23
 
+### Codex 複核與靜態備份完整化
+
+- 重新核對已部署版本 `afcff671cd51e81f7c01cfb498f7498a2fba22af` 與 Claude 待修建議，發現原檢查沒有涵蓋 Weebly 投影片 JavaScript 內的圖片引用。
+- 確認 11 個頁面含 149 個投影片引用（70 張不同圖片），GitHub Pages 實際會請求錯誤的主機根目錄 `/uploads/...`，抽樣回應 HTTP 404。
+- 趁原 Weebly 網站仍可存取，將缺少的 70 張投影片圖片下載至 `docs/uploads/1/0/2/8/102844230/`；下載檔案經 `file` 檢查均為 PNG 圖片。
+- 將 Weebly JavaScript 投影片改成使用本地圖片的水平滑動靜態圖庫，新增 `docs/files/static-overrides.css`，降低外部服務失效造成的內容缺漏。
+- 將 12 個含查詢字串的圖片檔名正規化為標準 `.png`／`.jpg`，避免靜態主機以 `application/octet-stream` 回傳而影響瀏覽器顯示。
+- 修正 19 篇文章與第 2 頁文章列表共 20 個格式錯誤的頁首背景網址；根因是原準備腳本只處理 `docs/*.html`，未遞迴處理文章子目錄。
+- 移除 19 個 Weebly 留言輸入 iframe，保留既有留言顯示區並改為靜態停用提示與 Email 聯絡方式。
+- 將 26 個正式頁面的 `og:url`、`og:image` 與 canonical 統一為目前 GitHub Pages 正式網址；所有 OG 圖片均改成本地檔案。
+- 更新 37 個 Facebook 與 37 個 Twitter 舊文章分享網址，並建立 18 個 `/2/post/YYYY/MM/` 舊路徑靜態轉址頁。
+- 新增含 25 個正式網址的 `docs/sitemap.xml`，並將 `docs/robots.txt` 更新為目前 sitemap 網址。
+- 新增可重複執行的 `work/repair_static_site.py` 與 `work/check_static_site.py`，並串接 `work/prepare-static-site.sh`，避免日後重建恢復同類問題。
+- 靜態驗證通過：26 個正式頁面各有一組 canonical、`og:url` 與本地覆寫樣式；所有本地 `src`／`href` 引用存在；表單、Weebly 留言、Weebly 投影片及錯誤背景網址均為 0。
+- Python 語法檢查、Shell 語法檢查與 `git diff --check` 通過。
+- 本機 HTTP smoke test 通過：首頁、文章列表、新舊文章、本地圖片、覆寫樣式、sitemap、robots.txt 與舊路徑轉址頁均回應 HTTP 200，正規化後的圖片回應正確圖片 MIME 類型。
+- 嘗試進行自動化桌面／手機瀏覽器檢查，但目前執行環境沒有可用的瀏覽器實例；正式部署後仍需人工抽查桌面與手機排版。
+
+### 初始建置與部署
+
 - 建立 GitHub Pages 靜態網站專案。
 - 以 `https://www.fanfanyeh.net/` 為來源，保存首頁、服務頁、洞察文章、關於頁與原站公開圖片素材。
 - 修正頁首背景圖片路徑，使網站能從 GitHub 專案子路徑載入。
@@ -34,5 +54,5 @@
 
 ### 已知相依項目
 
-- 版型的共用字型、CSS 與部分 JavaScript 仍由 Weebly 共用 CDN 載入；原站空間停用後，這些 Weebly 平台共用資源通常仍可使用。
+- 文章投影片、投影片圖片與留言輸入功能已不再依賴 Weebly；版型的共用字型、CSS 與部分 JavaScript 仍由 Weebly 共用 CDN 載入，後續可再評估本地化與第三方資源授權。
 - Facebook、LinkedIn、Instagram 等外部連結需連線至各自平台。

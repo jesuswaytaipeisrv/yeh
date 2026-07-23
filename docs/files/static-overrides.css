@@ -1,0 +1,31 @@
+.comment-static-note {
+  color: #666;
+  line-height: 1.8;
+  padding: 10px 0;
+}
+
+.static-article-gallery {
+  display: flex;
+  gap: 0;
+  margin: 20px auto;
+  max-width: 800px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+.static-article-gallery img {
+  display: block;
+  flex: 0 0 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  scroll-snap-align: start;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .static-article-gallery {
+    margin: 16px auto;
+  }
+}
