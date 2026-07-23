@@ -19,6 +19,8 @@
 - Python 語法檢查、Shell 語法檢查與 `git diff --check` 通過。
 - 本機 HTTP smoke test 通過：首頁、文章列表、新舊文章、本地圖片、覆寫樣式、sitemap、robots.txt 與舊路徑轉址頁均回應 HTTP 200，正規化後的圖片回應正確圖片 MIME 類型。
 - 嘗試進行自動化桌面／手機瀏覽器檢查，但目前執行環境沒有可用的瀏覽器實例；正式部署後仍需人工抽查桌面與手機排版。
+- 修復 commit `8338001`（`完整化靜態網站圖片與舊網址`）已直接推送至 `origin/main`。
+- GitHub Actions `Deploy GitHub Pages` run `30015886088` 已成功完成；正式站首頁、文章列表、舊文章、本地圖片、sitemap 與舊路徑轉址頁抽查均回應 HTTP 200，新增圖片回應 `image/png`。
 
 ### 初始建置與部署
 
