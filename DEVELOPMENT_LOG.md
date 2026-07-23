@@ -21,6 +21,9 @@
 - 調整 `.gitignore`：繼續忽略 `work/reference/` 原站擷取資料，但允許提交可重現整理流程的 `work/prepare-static-site.sh`。
 - 靜態檢查通過：Weebly 表單送出端點、multipart 表單、GitHub Pages 不相容的網域根路徑及私鑰特徵均為 0 筆；重建腳本通過 `bash -n` 語法檢查。
 - 更新後的本機 HTTP smoke test 通過：首頁、CCOS、霸凌預防、洽詢、洞察、關於頁、頁首背景圖、帶 `%3F` 檔名的 CSS 與圖片皆回應 HTTP 200；課程洽詢、電子報停用及 Email 洽詢提示均可讀取。
+- 已初始化本機 Git 儲存庫並建立 `main`，遠端設為私人儲存庫 `https://github.com/jesuswaytaipeisrv/yeh`；首個 commit 為 `57b8f5772ef728195965caad2af0131c99196c88`（`建立葉如凡靜態網站`），已成功推送。
+- GitHub Actions `Deploy GitHub Pages #1`（run `30011028291`）已自動觸發但失敗；確認原因是儲存庫尚未啟用 Pages，而目前帳號方案的設定頁僅提供「升級方案或將儲存庫改為公開」兩種啟用方式。
+- 目前儲存庫維持 private，未擅自改為 public、未開始付費升級，也尚未產生 GitHub Pages 正式網址；等待使用者決定升級 GitHub Pro 或改為公開儲存庫後再繼續部署。
 
 ### 已知相依項目
 
