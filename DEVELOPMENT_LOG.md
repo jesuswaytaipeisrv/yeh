@@ -26,6 +26,11 @@
 - 目前儲存庫維持 private，未擅自改為 public、未開始付費升級，也尚未產生 GitHub Pages 正式網址；等待使用者決定升級 GitHub Pro 或改為公開儲存庫後再繼續部署。
 - 使用者後續明確確認此儲存庫用於葉如凡網站，並完成 GitHub sudo mode 身分驗證；`jesuswaytaipeisrv/yeh` 已由 private 改為 public。
 - GitHub Pages 已啟用，Build and deployment source 設為 GitHub Actions；依使用者要求先停在此階段，尚未重新執行失敗的 workflow 或驗證正式網址。
+- 推送 commit `55cb77f58a13f02c63099dac4913184b19d2ebec`（`記錄公開 Pages 設定`）後，自動觸發 `Deploy GitHub Pages #2`（run `30011932199`），已於 25 秒內成功完成部署。
+- 正式網站為 `https://jesuswaytaipeisrv.github.io/yeh/`；首頁、CCOS、霸凌預防、洽詢、洞察、關於頁，以及實際引用的背景圖、帶 `%3F` 檔名 CSS 與圖片皆回應 HTTP 200。
+- 正式環境內容檢查通過：首頁與洽詢頁顯示 `mailto:` 聯絡方式，抽樣頁面未出現舊 Weebly 表單送出端點或可提交表單。
+- 正式環境瀏覽器 smoke test 通過：桌面版顯示六個主要導覽連結；390 x 844 手機版顯示 Menu，展開後可由「洽詢服務」進入正式洽詢頁，Email 洽詢區塊正常顯示。
+- 公開儲存庫搭配 GitHub Pages 的靜態託管費用為免費；若日後設定自訂網域，仍需負擔網域註冊或續約費用。
 
 ### 已知相依項目
 

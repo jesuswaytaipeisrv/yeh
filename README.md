@@ -25,6 +25,9 @@ python3 -m http.server 8000 --directory docs
 
 推送到 GitHub 的 `main` 分支後，GitHub Actions 會自動將 `docs/` 發佈到 GitHub Pages。
 
+- 正式網站：<https://jesuswaytaipeisrv.github.io/yeh/>
+- GitHub 儲存庫：<https://github.com/jesuswaytaipeisrv/yeh>
+
 ## 費用
 
 本專案使用公開 GitHub 儲存庫與 GitHub Pages，靜態網站託管費用為免費。自訂網域若沿用既有網域，另需負擔原網域註冊／續約費用。
